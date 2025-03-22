@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "GitPump",
+  "version": "1.0",
+  "description": "Extension to improve github achievement system",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": ["https://github.com/"], 
+  "background":{
+      "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
