@@ -1,16 +1,29 @@
 {
     "manifest_version": 2,
-    "name": "Git Pump",
+    "name": "GitPump",
     "version": "1.0",
 
-    "description": "Extension to improve github achievement system"
+    "description": "Extension to improve github achievement system",
+    "homepage_url": "https://github.com/btwiwd/GitPump/",
     "icons": {
-        "48": "gitpump_logo.png"
-    }
+        "48": "icon.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
 
     "content_scripts": [
         {
-            "matches": []
+            "matches": ["https://github.com/*"],
+            "js": ["content.js"],
+            "css": ["style.css"]
         }
     ]
 }
