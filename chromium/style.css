@@ -1,9 +1,9 @@
 #gitpump-level {
   position: absolute;
   top: 10px;
-  left: 8%;
+  left: 45%;
   background: black;
-  color: #FFBA00;
+  color: rgb(11, 83, 11);
   padding: 10px;
   border-radius: 5px;
   z-index: 1000;
@@ -16,30 +16,58 @@
 }
 
 #h2forwindow {
-  color: #FFBA00; 
+  color: rgb(11, 83, 11); 
 }
 
-#toggleButton {
-  width: 50px;
-  height: 30px;
-  background-color: gray;
-  border-radius: 15px;
+.switch {
+  display: inline-block;
   position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 60px;
+  height: 34px;
+  background-color: white;
 }
 
-.toggleSlider {
+.switch_input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.switch_slider {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  transition: left 0.3s ease;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 34px;
+  background-color: gray;
+  transition: .4s;
 }
 
-#toggleButton1.active{
-  background-color: blue;
+.switch_slider:before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  left: 4px;
+  bottom: 4px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background-color: white;
+  transition: .4s;
+}
+
+.switch_input:focus + .switch_slider {
+  box-shadow: 0 0 1px lightblue;
+}
+
+.switch_input:checked + .switch_slider {
+  background-color: lightblue;
+}
+
+.switch_input:checked + .switch_slider:before {
+  transform:translateX(26px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
 }
